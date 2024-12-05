@@ -1,11 +1,11 @@
 int spaceshipX;
 boolean bulletFired=false;
-int bulletx=-10;
-int bullety=-10;
+int bulletx  = -10;
+int bullety = -10;
 
 void setup(){
   size (600,600);
-  spaceshipX=width/2;
+  spaceshipX = width/2;
 }
 
 void draw() {
@@ -21,8 +21,8 @@ for(int n=0;n<4;n++){
 if(bulletFired){
   fill(255);
   rect(bulletx,bullety,5,10);
-  bullety-=5;
-  if(bullety<0){
+  bullety -= 5;
+  if(bullety < 0){
     bulletFired=false;
   }
 }
@@ -31,16 +31,15 @@ if(bulletFired){
 }
 
 void keyPressed(){
-  if(keyCode==LEFT &&
-   spaceshipX>0){
-     spaceshipX-=10;
-}else if(keyCode==RIGHT &&spaceshipX<width-40){
-    spaceshipX+=10;
-  } else if (key ==' '){
-    if(bulletFired){
-      bulletFired=true;
+  if(keyCode == LEFT && spaceshipX > 0){
+     spaceshipX -= 10;
+  }else if(keyCode == RIGHT && spaceshipX < width-40){
+    spaceshipX += 10;
+  } else if (key == ' '){
+    if(!bulletFired){
+      bulletFired = true;
       bulletx = spaceshipX +20;
-      bullety=height-40;
+      bullety =height-40;
     }
   }
 }
